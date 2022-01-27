@@ -1,11 +1,11 @@
 /* The Modal (background) */
 .modal {
-  position: fixed;
+  /* position: fixed;
   top: 150px;
   left: 150px;
   width: 50%;
   height: 50%;
-  background: greenyellow;
+  background: greenyellow; */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
@@ -19,7 +19,7 @@
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
+  background-color: #d66a6a;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
@@ -28,7 +28,7 @@
 
 /* The Close Button */
 .close {
-  color: #aaa;
+  color: rgb(140, 216, 117);
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -36,7 +36,10 @@
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: rgb(209, 240, 73);
   text-decoration: none;
   cursor: pointer;
+}
+.open {
+  color: rgb(140, 216, 117);
 }

@@ -10,6 +10,7 @@ class Modal extends React.Component {
   }
 
   handleClick = () => {
+  
     if (!this.state.showModal) {
       document.addEventListener("click", this.handleOutsideClick, false);
     } else {
@@ -22,6 +23,9 @@ class Modal extends React.Component {
   };
 
   handleOutsideClick = e => {
+    if(e.target.id === "Submit-btn"){
+      return;
+    }
     if (!this.node.contains(e.target)) {
       this.handleClick();
     }
@@ -29,14 +33,14 @@ class Modal extends React.Component {
 
   render() {
     return (
-      <div ref={node => {this.node = node}}>
-        <button onClick={handleOpenModal}>Open Modal</button>
+      <div>
+        <button type="button" className="btn btn-primary" id="Submit-btn" onClick={() => this.handleClick()}>Open Modal</button>
         {this.state.showModal && (
           <div className="modal">
-            <div className="modal-content">
+            <div className="modal-content" ref={node => {this.node = node}}>
               <span className="close" onClick={() => this.handleClick()}>&times;</span>
               <p>Some text in the Modal..</p>
-              <button onClick={() => this.handleClick()}>close modal</button>
+              <button type= "button" className="btn btn-primary" onClick={() => this.handleClick()}>Close modal</button>
             </div>
           </div>
         )}
