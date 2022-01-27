@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Modal.css'
 
 class Modal extends React.Component {
@@ -34,13 +34,13 @@ class Modal extends React.Component {
   render() {
     return (
       <div>
-        <button type="button" className="btn btn-primary" id="Submit-btn" onClick={() => this.handleClick()}>Open Modal</button>
+        <button type="button" className="open-modal-btn" id="Submit-btn" onClick={() => this.handleClick()}>Open Modal</button>
         {this.state.showModal && (
           <div className="modal">
             <div className="modal-content" ref={node => {this.node = node}}>
               <span className="close" onClick={() => this.handleClick()}>&times;</span>
               <p>Some text in the Modal..</p>
-              <button type= "button" className="btn btn-primary" onClick={() => this.handleClick()}>Close modal</button>
+              <button onClick={() => this.handleClick()} type="button" className='close-btn'>Close Modal</button>
             </div>
           </div>
         )}
